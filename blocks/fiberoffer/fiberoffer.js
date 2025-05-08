@@ -25,4 +25,20 @@ export default function decorate(block) {
     "defaultConsent": "in"
   });
 
+  var ECID = "";
+
+  alloy("getIdentity")
+    .then(function (result) {
+      // The command succeeded.
+      console.log("ECID:", result.identity.ECID);
+      ECID = result.identity.ECID;
+      getOffer(ECID);
+
+    })
+    .catch(function (error) {
+      // The command failed.
+      // "error" will be an error object with additional information.
+    });
+
+
 }
