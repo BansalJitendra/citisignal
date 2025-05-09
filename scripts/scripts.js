@@ -468,7 +468,6 @@ async function loadEager(doc) {
         URL: window.location.href
       }
     }
-
   });
   if (pageType !== 'Product') {
     window.adobeDataLayer.push((dl) => {
@@ -549,7 +548,7 @@ async function loadLazy(doc) {
  * without impacting the user experience.
  */
 function loadDelayed() {
-  //window.setTimeout(() => import('./delayed.js'), 3000);
+  window.setTimeout(() => import('./delayed.js'), 3000);
   
   window.setTimeout(() => {
     martechDelayed();
